@@ -124,3 +124,32 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+
+// Добавляем класс .reveal ко всем нужным элементам
+document.addEventListener("DOMContentLoaded", () => {
+  const elementsToReveal = document.querySelectorAll(
+    "main > * , .book-card, form, section, article, .main-content > *"
+  );
+
+  elementsToReveal.forEach(el => {
+    el.classList.add("reveal");
+  });
+
+  revealOnScroll(); // запускаем проверку при загрузке
+});
+
+function revealOnScroll() {
+  const reveals = document.querySelectorAll(".reveal");
+  const windowHeight = window.innerHeight;
+
+  reveals.forEach(el => {
+    const elementTop = el.getBoundingClientRect().top;
+    const revealPoint = 100;
+
+    if (elementTop < windowHeight - revealPoint) {
+      el.classList.add("active");
+    }
+  });
+}
+
+window.addEventListener("scroll", revealOnScroll);
