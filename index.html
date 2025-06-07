@@ -13,19 +13,11 @@
       <img src="logo.png" alt="Логотип" class="logo" />
       <span class="logo-text">StoreBooks</span>
 
-      <!-- Бургер-кнопка -->
-      <div class="burger" id="burger">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-
-      <!-- Навигация -->
-      <div class="nav-links" id="nav-links">
-        <a href="index.html" class="nav-btn">Главная</a>
+      <div class="nav-links">
+        <a href="#" class="nav-btn">Главная</a>
         <a href="#" class="nav-btn">Ассортимент</a>
         <a href="#" class="nav-btn">О нас</a>
-        <a href="#" class="nav-btn">Контакты</a>
+        <a href="#" class="nav-btn">Контакты</a>  
       </div>
     </div>
 
@@ -34,25 +26,60 @@
         <input type="text" placeholder="Поиск..." />
         <button type="submit">🔍</button>
       </div>
+           <!-- Кнопка-бургер -->
+      <div class="burger" id="burger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
     </div>
   </nav>
 </header>
 
-<!-- ФОРМА БРОНИРОВАНИЯ -->
 <main class="main-content">
-  <form id="booking-form">
-    <input type="text" id="name" placeholder="Ваше имя" required><br><br>
-    <input type="tel" id="phone" placeholder="Телефон" required><br><br>
-    <input type="text" id="address" placeholder="Адрес" required><br><br>
-    <input type="number" id="quantity" placeholder="Количество" required><br><br>
-    <button type="submit">Отправить</button>
-  </form>
-
-  <p id="success-message" style="color: green; display: none;">Данные отправлены в Telegram!</p>
+  <div class="book-card"  data-description="«Предатель» — это захватывающий постапокалиптический роман, полный напряжения, действия и неожиданных поворотов. Действие разворачивается в мире, где власть захватили могущественные группировки, а выжившие борются за безопасность и ресурсы. Главный герой оказывается в сложной ситуации предательства и должен сделать выбор между верностью друзьям и собственным выживанием. Роман исследует темы доверия, измены и борьбы за власть в жестоком мире." data-img="1.png">
+    <img src="1.png" alt="Книга 1" />
+    <h2>Предатель</h2>
+    <h3>Эль Кеннеди</h3>
+  </div>
+  <div class="book-card" data-title="Укрытие" data-description="Триллер о выживании и тайнах Хью Хауи." data-img="2.png">
+    <img src="2.png" alt="Книга 2" />
+    <h2>Укрытие</h2>
+    <h3>Хью Хауи</h3>
+  </div>
+  <div class="book-card" data-title="Сквозь зеркала" data-description="Фантастический роман Кристель Дабо с удивительными приключениями." data-img="3.png">
+    <img src="3.png" alt="Книга 3" />
+    <h2>Сквозь зеркала</h2>
+    <h3>Кристель Дабо</h3>
+  </div>
+  <div class="book-card" data-title="Рассвет жатвы" data-description="Эпический рассказ Сьюзен Коллинз о начале великой борьбы." data-img="4.png">
+    <img src="4.png" alt="Книга 4" />
+    <h2>Рассвет жатвы</h2>
+    <h3>Сьюзен Коллинз</h3>
+  </div>
+  <div class="book-card" data-title="Кости сердца" data-description="Драматичная история любви и потерь Колин Гувер." data-img="5.png">
+    <img src="5.png" alt="Книга 5" />
+    <h2>Кости сердца</h2>
+    <h3>Колин Гувер</h3>
+  </div>
+  <div class="book-card" data-title="Вспомнить все" data-description="Моя невероятная история — личные воспоминания и размышления." data-img="6.png">
+    <img src="6.png" alt="Книга 6" />
+    <h2>Вспомнить все</h2>
+    <h3>Моя невероятная история</h3>
+  </div>
 </main>
 
-<!-- Подключение скрипта -->
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <span id="modal-close" class="modal-close">&times;</span>
+    <h2 id="modal-title"></h2>
+    <img id="modal-img" src="" alt="" />
+    <p id="modal-description"></p>
+    <button id="modal-book-btn" class="buy-btn">Забронировать</button>
+  </div>
+</div>
+
+
 <script src="script.js"></script>
-<script src="booking.js"></script>
 </body>
 </html>
