@@ -9,9 +9,12 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  background-attachment: fixed;
   font-family: Arial, sans-serif;
   padding-top: 80px;
 }
+
+/* ----------------------- HEADER ------------------------ */
 
 header {
   position: fixed;
@@ -118,6 +121,8 @@ header {
   background-color: #000;
 }
 
+/* ----------------------- MAIN CONTENT ------------------------ */
+
 .main-content {
   max-width: 1200px;
   margin: 30px auto;
@@ -127,6 +132,8 @@ header {
   justify-content: space-between;
   gap: 20px;
 }
+
+/* ----------------------- BOOK CARD ------------------------ */
 
 .book-card {
   width: calc(33.333% - 20px);
@@ -160,7 +167,7 @@ header {
   margin: 0;
 }
 
-/* Модальное окно */
+/* ----------------------- MODAL ------------------------ */
 
 .modal {
   opacity: 0;
@@ -229,102 +236,8 @@ header {
   background-color: #45a049;
 }
 
-/* Адаптив под мобильные устройства */
-@media (max-width: 768px) {
-  body {
-    padding-top: 120px;
-  }
+/* ----------------------- БРОНИРОВАНИЕ ------------------------ */
 
-  header {
-    height: auto;
-    padding: 10px 0;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .nav-bar {
-    flex-direction: column;
-    padding: 10px 15px;
-    gap: 10px;
-  }
-
-  .left-side,
-  .right-side {
-    width: 100%;
-    justify-content: center;
-    gap: 10px;
-  }
-
-  .logo-text {
-    font-size: 20px;
-    text-align: center;
-  }
-
-  .logo {
-    height: 40px;
-  }
-
-  .main-content {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .book-card {
-    width: 90%;
-  }
-
-  .modal-content {
-    max-width: 90%;
-    padding: 15px 20px;
-  }
-}
-
-/* Адаптация формы бронирования для мобильных */
-@media (max-width: 768px) {
-  form#booking-form {
-    width: 90%;
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: rgba(255, 255, 255, 0.95);
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    box-sizing: border-box;
-  }
-
-  form#booking-form input,
-  form#booking-form button {
-    font-size: 16px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    width: 100%;
-    box-sizing: border-box;
-  }
-
-  form#booking-form button {
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    cursor: pointer;
-    font-weight: bold;
-  }
-
-  form#booking-form button:hover {
-    background-color: #45a049;
-  }
-
-  #success-message {
-    text-align: center;
-    margin-top: 15px;
-    font-size: 16px;
-  }
-}
-
-/* СТИЛЬНАЯ ФОРМА БРОНИРОВАНИЯ */
 form#booking-form {
   width: 100%;
   max-width: 500px;
@@ -379,8 +292,56 @@ form#booking-form button:hover {
   margin-top: 15px;
 }
 
-/* Адаптация для телефонов */
+/* ----------------------- АДАПТИВ ------------------------ */
+
 @media (max-width: 768px) {
+  body {
+    padding-top: 120px;
+  }
+
+  header {
+    height: auto;
+    padding: 10px 0;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-bar {
+    flex-direction: column;
+    padding: 10px 15px;
+    gap: 10px;
+  }
+
+  .left-side,
+  .right-side {
+    width: 100%;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .logo-text {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .logo {
+    height: 40px;
+  }
+
+  .main-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .book-card {
+    width: 90%;
+  }
+
+  .modal-content {
+    max-width: 90%;
+    padding: 15px 20px;
+  }
+
   form#booking-form {
     padding: 20px;
     border-radius: 12px;
@@ -393,6 +354,8 @@ form#booking-form button:hover {
     padding: 12px;
   }
 }
+
+/* ----------------------- БУРГЕР ------------------------ */
 
 .burger {
   display: none;
@@ -409,7 +372,6 @@ form#booking-form button:hover {
   border-radius: 2px;
 }
 
-/* Мобильный режим */
 @media (max-width: 768px) {
   .burger {
     display: flex;
@@ -429,6 +391,8 @@ form#booking-form button:hover {
   }
 }
 
+/* ----------------------- АНИМАЦИЯ ПОЯВЛЕНИЯ ------------------------ */
+
 .reveal {
   opacity: 0;
   transform: translateY(50px);
@@ -441,3 +405,19 @@ form#booking-form button:hover {
   transform: translateY(0);
 }
 
+/* ----------------------- УВЕЛИЧЕНИЕ ПРИ HOVER ------------------------ */
+
+.reveal:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+}
+
+/* Альтернативный класс — если хочешь на выбор */
+.hover-grow {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-grow:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
