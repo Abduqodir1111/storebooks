@@ -394,3 +394,37 @@ form#booking-form button:hover {
   }
 }
 
+.burger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+  margin-left: 10px;
+}
+
+.burger span {
+  width: 25px;
+  height: 3px;
+  background-color: #333;
+  border-radius: 2px;
+}
+
+/* Мобильный режим */
+@media (max-width: 768px) {
+  .burger {
+    display: flex;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+}
