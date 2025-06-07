@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Проверка фона</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<header>
+  <nav class="nav-bar">
+    <div class="left-side">
+      <img src="logo.png" alt="Логотип" class="logo" />
+      <span class="logo-text">StoreBooks</span>
+
+      <div class="nav-links">
+        <a href="index.html" class="nav-btn">Главная</a>
+        <a href="#" class="nav-btn">Ассортимент</a>
+        <a href="#" class="nav-btn">О нас</a>
+        <a href="#" class="nav-btn">Контакты</a>
+      </div>
+    </div>
+
+    <div class="right-side">
+      <div class="search-box">
+        <input type="text" placeholder="Поиск..." />
+        <button type="submit">🔍</button>
+      </div>
+    </div>
+  </nav>
+</header>
+  <!-- ФОРМА БРОНИРОВАНИЯ -->
+  <main class="main-content">
+<form id="booking-form">
+  <input type="text" id="name" placeholder="Ваше имя" required><br><br>
+  <input type="tel" id="phone" placeholder="Телефон" required><br><br>
+  <input type="text" id="address" placeholder="Адрес" required><br><br>
+  <input type="number" id="quantity" placeholder="Количество" required><br><br>
+  <button type="submit">Отправить</button>
+</form>
+
+<p id="success-message" style="color: green; display: none;">Данные отправлены в Telegram!</p>
+
+  </main>
+<script src="booking.js"></script>
+</body>

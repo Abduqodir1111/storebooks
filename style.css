@@ -1,0 +1,273 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-image: url('background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100%;
+  font-family: Arial, sans-serif;
+  padding-top: 80px; /* чтобы контент не прятался под фикс. хедером */
+}
+
+header {
+  position: fixed; /* Чтобы хедер всегда был сверху */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background-color: rgba(255, 255, 255, 0.8); /* белый прозрачный фон */
+  backdrop-filter: blur(10px); /* размытие фона под хедером */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  z-index: 1000; /* чтобы был поверх всего */
+  display: flex;
+  align-items: center;
+}
+
+.nav-bar {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.left-side {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-shrink: 1;
+  min-width: 0;
+}
+
+.right-side {
+  display: flex;
+  align-items: center;
+  flex-shrink: 1;
+  min-width: 0;
+}
+
+.logo {
+  height: 50px;
+  flex-shrink: 0;
+}
+
+.logo-text {
+  font-size: 28px;
+  font-weight: bold;
+  color: #333;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.nav-links {
+  display: flex;
+  gap: 15px;
+  flex-shrink: 1;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.nav-btn {
+  padding: 8px 16px;
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.nav-btn:hover {
+  background-color: #333;
+  color: white;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+  flex-shrink: 1;
+  min-width: 150px;
+  max-width: 300px;
+  width: 100%;
+}
+
+.search-box input {
+  border: none;
+  padding: 8px 12px;
+  outline: none;
+  font-size: 14px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.search-box button {
+  background-color: #333;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.search-box button:hover {
+  background-color: #000;
+}
+
+/* Адаптив для мобильных экранов */
+@media (max-width: 768px) {
+  .nav-bar {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 10px 20px;
+  }
+  .left-side, .right-side {
+    flex-basis: 100%;
+    justify-content: center;
+    margin: 5px 0;
+  }
+  .nav-links {
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .search-box {
+    max-width: 100%;
+  }
+  .logo-text {
+    font-size: 22px;
+  }
+  .logo {
+    height: 40px;
+  }
+  header {
+    height: auto;
+    padding: 10px 0;
+  }
+  body {
+    padding-top: 120px;
+  }
+}
+
+.main-content {
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 0 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.book-card {
+  width: 30%; /* примерно 3 карточки в ряд с отступами */
+  min-width: 280px;
+  max-width: 300px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  padding: 15px;
+  text-align: center;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.book-card:hover {
+  transform: scale(1.05);
+}
+
+.book-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  object-fit: contain;
+}
+
+.book-card h3 {
+  font-size: 16px;
+  color: #333;
+  margin: 0;
+}
+
+/* Модальное окно */
+
+.modal {
+  opacity: 0;
+  visibility: hidden;
+  position: fixed;
+  z-index: 2000;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.3s ease;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.modal.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-content {
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px 30px;
+  max-width: 600px;
+  width: 100%;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  position: relative;
+  text-align: center;
+  transform: translateY(-20px);
+  transition: transform 0.3s ease;
+  box-sizing: border-box;
+}
+
+.modal.show .modal-content {
+  transform: translateY(0);
+}
+
+#modal-img {
+  max-width: 100%;
+  height: auto;
+  margin: 15px 0;
+  border-radius: 6px;
+}
+
+.buy-btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 150px;
+}
+
+.buy-btn:hover {
+  background-color: #45a049;
+}
