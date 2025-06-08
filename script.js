@@ -101,3 +101,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
   renderBooks();
 });
+
+window.addEventListener('load', () => {
+  const preloader = document.getElementById('preloader');
+  if (preloader) {
+    setTimeout(() => {
+      preloader.classList.add('hide'); // запускаем плавное исчезновение
+
+      // через 0.5 сек (длительность transition) скрываем элемент полностью
+      setTimeout(() => {
+        preloader.style.display = 'none';
+      }, 500);
+    }, 2000); // задержка перед исчезновением (2 секунды)
+  }
+});
+
